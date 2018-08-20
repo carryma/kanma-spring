@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="abstractPeople" class="com.springframework.entity.People">
+        <property name="className" value="高三五班"/>
+        <property name="age" value="19"/>
+    </bean>
+
+    <bean id="kanma" parent="abstractPeople" depends-on="authority">
+        <property name="name" value="kanma"/>
+        <property name="id" value="1"/>
+    </bean>
+    <bean id="heshan" parent="abstractPeople">
+        <property name="name" value="heshan"/>
+        <property name="id" value="2"/>
+        <property name="age" value="18"/>
+    </bean>
+    <bean id="authority" class="com.springframework.entity.Authority"/>
+</beans>

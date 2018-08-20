@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="dog" class="com.springframework.entity.Authority">
+        <property name="name" value="Kate"/>
+    </bean>
+    <bean id="people" class="com.springframework.entity.People">
+        <property name="id" value="1"/>
+        <property name="name" value="kanma"/>
+        <property name="age" value="1"/>
+        <property name="dog" ref="dog"/>
+        <property name="hobbies">
+            <util:list>
+                <value>打篮球</value>
+                <value>编程</value>
+            </util:list>
+        </property>
+        <property name="numbers">
+            <set>
+                <value>5533</value>
+                <value>1213</value>
+            </set>
+        </property>
+
+        <property name="employee">
+            <map>
+                <entry>
+                    <key><value>上午</value></key>
+                    <value>写代码</value>
+                </entry>
+                <entry>
+                    <key><value>下午</value></key>
+                    <value>测试代码</value>
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+
+</beans>
